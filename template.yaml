@@ -19,7 +19,7 @@ spec:
       name: Fetch base template
       action: fetch:template
       input:
-        url: https://github.com/Sandeep084b/Demo01
+        url: https://github.com/Sandy1101/Demo01
     - id: publish
       name: Publish to GitHub
       action: publish:github
