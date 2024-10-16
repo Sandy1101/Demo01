@@ -1,0 +1,28 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: demo-app-template
+  title: Create a new Git Repo
+  description: New Git Repo
+spec:
+  owner: backstage-team
+  type: service
+
+  parameters:
+    - title: Name of the new webm app
+      type: string
+      required: true
+      name: name
+
+  steps:
+    - id: fetch
+      name: Fetch base template
+      action: fetch:template
+      input:
+        url: https://github.com/Sandeep084b/Demo01
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        repoUrl: github.com/${{ parameters.name }}
+        description: This is a new webm app scaffolded by Backstage.

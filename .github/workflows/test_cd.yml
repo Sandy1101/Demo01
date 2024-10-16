@@ -1,0 +1,28 @@
+# Deploy Packages to test sevrer 
+on: 
+  push:
+    branches: 
+      - 'feature**'
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v34
+      with:
+        separator: ","
+        
+    - name: List all added files
+      id: modified
+      run: | 
+        echo "modifiedfiles=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
+        #echo "modifiedfiles"
+        
+    - name: Execute Shell Script
+      run: |
+        echo "$modifiedfiles"
+        chmod +x ./Scripts/remote_copy.sh
+        ./Scripts/remote_copy.sh

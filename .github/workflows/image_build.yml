@@ -1,0 +1,30 @@
+# Deploy Packages to test sevrer..
+on: 
+  push:
+    branches: 
+      - 'feature*'
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+     with:
+        separator: ","
+    steps:
+    - name: Check out my other private repo
+    - uses: actions/checkout@main
+    with:
+       repository: Sandeep084b/Demo01
+       token: ${{ secrets.GIT_TOKEN }}
+       ref: main
+        
+    - name: Copy Folders from another Repo
+      run: | 
+        mkdir -p common-packages
+        cp -r AH-Demo common-packages/
+        cp -r AH-Demo_01 common-packages/
+        
