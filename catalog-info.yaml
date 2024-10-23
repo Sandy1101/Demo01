@@ -6,5 +6,5 @@ metadata:
     github.com/project-slug: Sandy1101/Demo01
 spec:
   type: other
-  lifecycle: unknown
+  lifecycle: development
   owner: guests
