@@ -15,7 +15,7 @@ spec:
       properties:
         name:
           title: Name
-          type: String
+          type: string
           description: Name of the Repo
           ui:autofocus: true
           ui:options:
