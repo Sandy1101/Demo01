@@ -5,7 +5,7 @@ metadata:
   title: Create a new Git Repo
   description: New Git Repo
 spec:
-  owner: backstage-team
+  owner: guests
   type: service
 
   parameters:
