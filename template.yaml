@@ -31,5 +31,5 @@ spec:
       name: Publish to GitHub
       action: publish:github
       input:
-        repoUrl: github.com/${{ parameters.name }}
+        repoUrl: github.com/Sandy1101/${{ parameters.name }}
         description: This is a new webm app scaffolded by Backstage.
