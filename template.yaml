@@ -27,6 +27,7 @@ spec:
       action: fetch:template
       input:
         url: https://github.com/Sandy1101/Demo01
+        branch: main
     - id: publish
       name: Publish to GitHub
       action: publish:github
