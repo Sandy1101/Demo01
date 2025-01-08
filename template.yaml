@@ -36,7 +36,7 @@ spec:
       input:
         url: https://github.com/Sandy1101/Demo01
         branch: main
-        targetPath: .
+        #targetPath: .
     - id: publish
       name: Publish to GitHub
       action: publish:github
