@@ -1,38 +1,57 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: demo-app-template
-  title: Create a new Git Repo
-  description: New Git Repo
+  name: Demo Template
+  title: Create Repo
+  description: Sample Template and publish it to GitHub
+  tags:
+    - template
 spec:
-  owner: guests
+  owner: team-a
   type: service
-
   parameters:
-    - title: Name of the new webm app
-      required: 
+    - title: Create a new Webm app
+      required:
         - name
       properties:
         name:
-          title: Name
+          title: Name of the App
           type: string
-          description: Name of the Repo
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-
+          description: Name for the new app repository
+        description:
+          title: App Description
+          type: string
+          description: Description for the app
+        visibility:
+          title: Repository Visibility
+          type: string
+          enum:
+            - private
+            - public
+          default: public
   steps:
     - id: fetch
-      name: Fetch base template
+      name: Fetch Template
       action: fetch:template
       input:
         url: https://github.com/Sandy1101/Demo01
         branch: main
-  
+        targetPath: .
     - id: publish
       name: Publish to GitHub
       action: publish:github
       input:
         repoUrl: https://github.com/Sandy1101/${{ parameters.name }}
-        description: This is a new webm app scaffolded by Backstage.
-        catalogInfoPath: '/catalog-info.yaml'
+        description: ${{ parameters.description }}
+        visibility: ${{ parameters.visibility }}
+    - id: register
+      name: Register Component in Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Backstage Component
+        url: /catalog/default/component/${{ parameters.name }}
