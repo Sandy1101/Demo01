@@ -33,3 +33,4 @@ spec:
       input:
         repoUrl: https://github.com/Sandy1101/${{ parameters.name }}
         description: This is a new webm app scaffolded by Backstage.
+        catalogInfoPath: '/catalog-info.yaml'
