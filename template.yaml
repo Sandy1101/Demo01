@@ -30,8 +30,8 @@ spec:
             - public
           default: public
   steps:
-    - id: fetch
-      name: Fetch Template
+    - id: fetch-base
+      name: Fetch Templatee
       action: fetch:template
       input:
         url: https://github.com/Sandy1101/Demo01/
