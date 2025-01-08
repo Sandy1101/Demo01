@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Demo01
-  Description: Backstage Demo to Display Github Repo
+  description: Backstage Demo to Display Github Repo
   annotations:
     github.com/project-slug: Sandy1101/Demo01
   links:
