@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: Demo Template
+  name: demo-template
   title: Create Repo
   description: Sample Template and publish it to GitHub
   tags:
