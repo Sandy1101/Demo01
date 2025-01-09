@@ -6,7 +6,7 @@ metadata:
   description: Webmethods is a Integration tool
   tags:
     - webm
-    - IBM
+    - ibm
     - managed-service
   annotations:
     github.com/project-slug: Sandy1101/Demo01
