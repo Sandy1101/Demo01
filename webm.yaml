@@ -14,3 +14,4 @@ spec:
   type: managed-service
   lifecycle: development
   owner: tgs-ei-accelerators
+  domain: EI
