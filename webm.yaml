@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: webm
+  name: webm-software
   title: WebMethods Software
   description: Webmethods is a Integration tool
   tags:
-    - webMethods
+    - webm
     - IBM
     - managed-service
   annotations:
